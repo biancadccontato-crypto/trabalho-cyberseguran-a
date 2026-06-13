@@ -14,15 +14,17 @@
 </header>
 <main>
     <h1>Gerador de Senhas</h1>
-        <p>Clique no botão para gerar uma senha forte e segura.</p>
-            <div class="container-senha">
-                <div class="caixa-senha">
-                    <span id="senha-gerada">
-                        <span class="placeholder-senha">Sua senha aparecerá aqui...</span>
-                    </span>
-                </div>        
-                <button class="btn-gerar" onclick="gerarSenha()">Gerar Senha</button>
-            </div>
+        <h3>Selecione o tamanho da senha:</h3>
+            <label for="tamanho"></label>
+            <input type="number" id="tamanho" value="16" min="8" max="32">
+            <br><br>
+            <h3>Clique no botão para gerar uma senha forte e segura.</h3>
+            <button onclick="gerarSenha()">Gerar Senha</button>
+            <p id="senha-gerada">Sua senha aparecerá aqui...</p>
 </main>
+<footer>
+
+</footer>
+    <script src="js/segurança.js"></script>
 </body>
 </html>

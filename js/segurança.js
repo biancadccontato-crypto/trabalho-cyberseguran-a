@@ -1,37 +1,33 @@
 const letrasMinusculas = "abcdefghijklmnopqrstuvwxyz";
 const letrasMaiusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numeros = "0123456789";
-const caracteresEspeciais = "!@#$%^&*()_+-=[]{}|;:,.<>?";
+const especiais = "!@#$%&*()_+-=[]{}|;:,.<>?";
 
-const todosCaracteres = letrasMinusculas + letrasMaiusculas + numeros + caracteresEspeciais;
+const todos = letrasMinusculas + letrasMaiusculas + numeros + especiais;
 
 function gerarSenha() {
-    const tamanho = 16;
+    const tamanho = parseInt(document.getElementById("tamanho").value);
+
+    if (tamanho < 8 || tamanho > 32) {
+        document.getElementById("senha-gerada").textContent = "Digite um tamanho entre 8 e 32.";
+        return;
+    }
+
     let senha = "";
 
     // Garante pelo menos um de cada tipo
     senha += letrasMinusculas[Math.floor(Math.random() * letrasMinusculas.length)];
     senha += letrasMaiusculas[Math.floor(Math.random() * letrasMaiusculas.length)];
     senha += numeros[Math.floor(Math.random() * numeros.length)];
-    senha += caracteresEspeciais[Math.floor(Math.random() * caracteresEspeciais.length)];
+    senha += especiais[Math.floor(Math.random() * especiais.length)];
 
-    // Preenche o restante aleatoriamente
+    // Preenche até o tamanho escolhido
     for (let i = 4; i < tamanho; i++) {
-        senha += todosCaracteres[Math.floor(Math.random() * todosCaracteres.length)];
+        senha += todos[Math.floor(Math.random() * todos.length)];
     }
 
-    // Embaralha para não seguir padrão fixo
+    // Embaralha
     senha = senha.split("").sort(() => Math.random() - 0.5).join("");
 
     document.getElementById("senha-gerada").textContent = senha;
-    document.getElementById("btn-copiar").style.display = "inline-block";
-    document.getElementById("aviso-copiado").textContent = "";
-}
-
-function copiarSenha() {
-    const senha = document.getElementById("senha-gerada").textContent;
-
-    navigator.clipboard.writeText(senha).then(() => {
-        document.getElementById("aviso-copiado").textContent = "✓ Senha copiada!";
-    });
 }
