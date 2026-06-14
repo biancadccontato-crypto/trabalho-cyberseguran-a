@@ -1,18 +1,461 @@
+/* ==========================================================================
+   IMPORTAÇÃO DE FONTES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* ==========================================================================
+   1. VARIÁVEIS DE COR (TEMA CLARO)
+   ========================================================================== */
+:root {
+    --bg-color:          #f4f6f9;
+    --text-color:        #333333;
+    --header-bg:         #1a237e;
+    --header-text:       #ffffff;
+    --nav-bg:            #283593;
+    --nav-hover:         #3f51b5;
+    --card-bg:           #ffffff;
+    --card-text:         #333333;
+    --card-hover-border: #3f51b5;
+    --footer-bg:         #212121;
+    --footer-text:       #aaaaaa;
+    --input-border:      #cccccc;
+    --accent:            #3f51b5;
+    --transition:        0.3s;
+}
+
+/* ==========================================================================
+   2. TEMA ESCURO
+   ========================================================================== */
 body.dark {
     background-color: #121212;
     color: #ffffff;
+    --bg-color:          #121212;
+    --text-color:        #ffffff;
+    --header-bg:         #1f1f1f;
+    --nav-bg:            #2d2d2d;
+    --nav-hover:         #404040;
+    --card-bg:           #1e1e1e;
+    --card-text:         #ffffff;
+    --card-hover-border: #9fa8da;
+    --input-border:      #444444;
+    --accent:            #9fa8da;
 }
-.material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24;
+
+body.dark section,
+body.dark article,
+body.dark .membro-card,
+body.dark .gerador-container {
+    background-color: var(--card-bg);
+    color: var(--card-text);
 }
+
+body.dark h2,
+body.dark h3 {
+    color: #9fa8da;
+}
+
+body.dark .card {
+    background-color: var(--card-bg);
+    color: var(--card-text);
+}
+
+body.dark .card-desc {
+    color: var(--card-text);
+}
+
+body.dark .card-link {
+    color: #9fa8da;
+}
+
+body.dark .form-grupo input,
+body.dark .form-grupo textarea {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border-color: var(--input-border);
+}
+
+body.dark .senha-display {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   3. ACESSIBILIDADE
+   ========================================================================== */
+body.large-font {
+    font-size: 1.25rem;
+}
+
+/* ==========================================================================
+   4. RESET E BASE
+   ========================================================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color var(--transition), color var(--transition), font-size var(--transition);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover { color: var(--nav-hover); }
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ==========================================================================
+   5. MATERIAL SYMBOLS
+   ========================================================================== */
 .material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ==========================================================================
+   6. HEADER
+   ========================================================================== */
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 1.25rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color var(--transition);
+}
+
+.header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo { display: flex; flex-direction: column; }
+
+.header-logo h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--header-text);
+    margin-bottom: 0;
+}
+
+.header-sub {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+}
+
+.controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.controls button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    color: var(--header-text);
+    padding: 0.4rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: background var(--transition);
+}
+
+.controls button:hover {
+    background-color: rgba(255,255,255,0.15);
+}
+
+/* ==========================================================================
+   7. MAIN E SEÇÕES
+   ========================================================================== */
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    min-height: 50vh;
+}
+
+section, article {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: background-color var(--transition), color var(--transition);
+}
+
+h2, h3 {
+    margin-bottom: 1rem;
+    color: #3f51b5;
+}
+
+p { margin-bottom: 1rem; }
+
+p:last-child { margin-bottom: 0; }
+
+ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+ul li { margin-bottom: 0.4rem; }
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* ==========================================================================
+   8. CARDS DE NAVEGAÇÃO (HOME)
+   ========================================================================== */
+.sobre-temas {
+    padding: 2rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: 1.4rem;
+    color: #3f51b5;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+body.dark .section-header p { color: #9e9e9e; }
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 2px solid transparent;
+    transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.card:hover {
+    border-color: var(--card-hover-border);
+    transform: translateY(-2px);
+}
+
+.card h3 {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-emoji { font-size: 1.2rem; }
+
+.card-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   9. GERADOR DE SENHAS
+   ========================================================================== */
+.gerador-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 2.5rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gerador-container h2 { margin-bottom: 1.5rem; }
+
+.senha-display {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    word-break: break-all;
+    border: 1px solid var(--input-border);
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.btn-gerar {
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color var(--transition);
+}
+
+.btn-gerar:hover { background-color: #3f51b5; }
+
+/* ==========================================================================
+   10. SOBRE O GRUPO
+   ========================================================================== */
+.grupo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.membro-card {
+    background: var(--card-bg);
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: background-color var(--transition);
+}
+
+.membro-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #3f51b5;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.dark .membro-card img { border-color: #9fa8da; }
+
+.membro-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+
+.membro-card p { font-size: 0.88rem; color: #666; margin-bottom: 0; }
+
+body.dark .membro-card p { color: #9e9e9e; }
+
+/* ==========================================================================
+   11. FORMULÁRIO DE CONTATO
+   ========================================================================== */
+.form-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-grupo label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.form-grupo input,
+.form-grupo textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    transition: border-color var(--transition), background-color var(--transition);
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+    outline: none;
+    border-color: #3f51b5;
+}
+
+.btn-enviar {
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color var(--transition);
+}
+
+.btn-enviar:hover { background-color: #3f51b5; }
+
+/* ==========================================================================
+   12. FOOTER
+   ========================================================================== */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.85rem;
+    border-top: 1px solid #333;
+    margin-top: 3rem;
+}
+
+/* ==========================================================================
+   13. RESPONSIVO
+   ========================================================================== */
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grupo-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    header { position: relative; }
+}
+
+@media (max-width: 480px) {
+    .cards-grid { grid-template-columns: 1fr; }
+    .grupo-grid { grid-template-columns: 1fr; }
 }
