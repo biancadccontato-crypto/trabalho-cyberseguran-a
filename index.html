@@ -3,51 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <title>Segurança da Informação - Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
+
+    <!-- HEADER -->
     <header>
-        <h1>Home</h1>
-        <nav>
-            <ul>
-                <li><a href="content.html">Cartilha: Privacidade</a></li>
-                <li><a href="content2.html">Cartilha: Fraudes</a></li>
-                <li><a href="seguranca.html">Gerador de Senhas</a></li>
-                <li><a href="sobre.html">Sobre o Grupo</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-            </ul>
-            <div class="card">
-    <h1>Exemplo de conteúdo</h1>
-    <p>Clique no botão para alternar entre os temas.</p>
-
-    <button id="themeToggle" onclick="Botão()">
-      <span class="material-symbols-outlined" id="themeIcon">dark_mode</span>
-      <span id="themeLabel">Modo escuro</span>
-    </button>
-  </div>
-
-  <script>
-    function toggleTheme() {
-      const html = document.documentElement;
-      const isDark = html.getAttribute('data-theme') === 'dark';
-
-      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      document.getElementById('themeIcon').textContent = isDark ? 'dark_mode' : 'light_mode';
-      document.getElementById('themeLabel').textContent = isDark ? 'Modo escuro' : 'Modo claro';
-    }
-  </script
-           
-        </nav>
+        <div class="header-container">
+            <div class="header-logo">
+                <div>
+                    <h1>Guia de Segurança Digital</h1>
+                    <span class="header-sub">Projeto Web Lab · UPF 2025</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="toggle-font" title="Alternar Tamanho da Fonte">
+                    <span class="material-symbols-outlined">accessibility</span>
+                </button>
+                <button id="toggle-theme" title="Alternar Tema">
+                    <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
+                </button>
+            </div>
+        </div>
     </header>
 
     <main>
+
+        <!-- HERO -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="hero-tag">🎓 Desenvolvido por alunos da UPF</span>
+                <h2>Navegue com <span class="destaque">segurança</span> no mundo digital</h2>
+                <p>Aprenda a proteger sua privacidade online e a identificar golpes digitais. Conteúdo baseado nas cartilhas da disciplina de Cybersegurança.</p>
+            </div>
+        </section>
+
+        <!-- APRESENTAÇÃO -->
+        <section class="intro-section">
+            <article class="cartilha-card">
+                <div class="cartilha-icon">🔒</div>
+                <div class="cartilha-text">
+                    <h3>Cartilha de Privacidade Digital</h3>
+                    <p>A privacidade na internet vai muito além de esconder suas senhas. Ela envolve o controle sobre quem tem acesso aos seus dados pessoais, seus hábitos de navegação e suas informações sensíveis.</p>
+                    <p>Discutiremos como os dados são coletados por grandes plataformas e técnicas para blindar a sua presença online.</p>
+                </div>
+            </article>
+
+            <article class="cartilha-card">
+                <div class="cartilha-icon">⚠️</div>
+                <div class="cartilha-text">
+                    <h3>Cartilha de Golpes na Internet</h3>
+                    <p>Os cibercriminosos estão cada vez mais sofisticados, utilizando técnicas de engenharia social para enganar usuários.</p>
+                    <p>Apresentamos os golpes mais comuns e como identificar os sinais de uma fraude antes de se tornar uma vítima.</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- CARDS NAVEGAÇÃO -->
+        <section class="sobre-temas">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Explore o site</h2>
+                    <p>Clique em uma das seções para saber mais.</p>
+                </div>
+                <div class="cards-grid">
+
+                    <div class="card">
+                        <h3><span class="card-emoji">🔒</span> <a href="content.html">Privacidade Digital</a></h3>
+                        <p class="card-desc">Entenda o que são dados pessoais, como são usados e como os proteger.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3><span class="card-emoji">⚠️</span> <a href="content.html">Golpes Online</a></h3>
+                        <p class="card-desc">Conheça os golpes mais comuns usados na internet.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3><span class="card-emoji">🔑</span> <a href="segurança.html">Gerador de Senha</a></h3>
+                        <p class="card-desc">Crie uma senha segura e forte instantaneamente.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3><span class="card-emoji">👥</span> <a href="sobre.html">Sobre o Grupo</a></h3>
+                        <p class="card-desc">Conheça os responsáveis por este projeto.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3><span class="card-emoji">✉️</span> <a href="contato.html">Contato</a></h3>
+                        <p class="card-desc">Entre em contato conosco.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </main>
+
     <footer>
-        <p>Projeto Web Lab - Curso de Ciência da Computação (UPF).</p>
+        <p>&copy; 2025 - Trabalho de Desenvolvimento para Web - UPF</p>
     </footer>
-    <script src="js/script.js"></script>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança da Informação - Home</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>Guia de Segurança Digital</h1>
+            
+            <div class="controls">
+                <button id="toggle-theme" title="Alternar Tema">
+                    <span class="material-symbols-outlined">dark_mode</span>
+                </button>
+                <button id="toggle-font" title="Alternar Tamanho da Fonte">
+                    <span class="material-symbols-outlined">accessibility</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Apresentação das Cartilhas de Segurança</h2>
+            <p>Seja bem-vindo ao nosso portal interativo. Este espaço foi construído com base nas cartilhas desenvolvidas pelos alunos da UPF na disciplina de Cybersegurança, buscando conscientizar a comunidade acadêmica e externa sobre os perigos do ambiente digital</p>
+        </section>
+
+        <article class="cartilha-section">
+            <h3>1. Cartilha de Privacidade Digital</h3>
+            <p>A privacidade na internet vai muito além de esconder suas senhas. Ela envolve o controle sobre quem tem acesso aos seus dados pessoais, seus hábitos de navegação e suas informações sensíveis.</p>
+            <p>Em nossa página dedicada, discutiremos como os dados são coletados por grandes plataformas, a importância de ler os termos de uso e técnicas para blindar a sua presença online contra o rastreamento excessivo.</p>
+        </article>
+
+        <article class="cartilha-section">
+            <h3>2. Cartilha de Golpes na Internet</h3>
+            <p>Os cibercriminosos estão cada vez mais sofisticados, utilizando técnicas de engenharia social para enganar usuários e extrair vantagens financeiras.</p>
+            <p>Nesta seção, apresentamos os golpes mais comuns da atualidade e mostramos de forma prática como identificar os sinais de uma fraude antes de se tornar uma vítima.</p>
+        </article>
+    </main>
+
+    <nav>
+        <h2>Explore o Site</h2>
+        <p>Clique em uma das opções para saber mais</p>
+        <ul>
+            <li><a href="content.html">Privacidade Digital</a></div></li>
+            <p>Entenda o que são os dados pessoais, como são usados e como os proteger</p>
+            <li><a href="content.html">Golpes Virtuais</a></li>
+            <p>Conheça os golpes mais comuns usados na internet</p>
+            <li><a href="segurança.html">Gerador de Senhas</a></li>
+            <p>Crie uma senha segura e forte instantaneamente </p>
+            <li><a href="sobre.html">Sobre o Grupo</a></li>
+            <p>Coneheças os responsáveis por este projeto</p>
+            <li><a href="contato.html">Contato</a></li>
+            <p>Entre em contato conosco</p>
+        </ul>
+    </nav>
+
+    <footer>
+        <p>&copy; 2026 - Trabalho de Desenvolvimento para Web - UPF</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
 </body>
 </html>
