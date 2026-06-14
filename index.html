@@ -17,13 +17,29 @@
                 <li><a href="seguranca.html">Gerador de Senhas</a></li>
                 <li><a href="sobre.html">Sobre o Grupo</a></li>
                 <li><a href="contato.html">Contato</a></li>
+                link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
             </ul>
-            <button onclick="alternarTema()">
-            <span class="material-symbols-outlined">settings_night_sight</span>
-            </button>
-            <button onclick="alternarFonte()">
-            <span class="material-symbols-outlined">accessibility</span>
-            </button>
+            <div class="card">
+    <h1>Exemplo de conteúdo</h1>
+    <p>Clique no botão para alternar entre os temas.</p>
+
+    <button id="themeToggle" onclick="Botão()">
+      <span class="material-symbols-outlined" id="themeIcon">dark_mode</span>
+      <span id="themeLabel">Modo escuro</span>
+    </button>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      document.getElementById('themeIcon').textContent = isDark ? 'dark_mode' : 'light_mode';
+      document.getElementById('themeLabel').textContent = isDark ? 'Modo escuro' : 'Modo claro';
+    }
+  </script
+           
         </nav>
     </header>
 
