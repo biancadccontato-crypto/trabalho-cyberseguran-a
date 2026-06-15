@@ -1,17 +1,24 @@
+// Botão formulário de contato
 function enviar() {
     alert("Página em construção");
 }
-function alternarTema() {
+// Tema
+const botaoTema = document.getElementById("toggle-theme");
+const icone = document.getElementById("theme-icon");
+
+botaoTema.addEventListener("click", function() {
     document.body.classList.toggle("dark");
-}
-let fonteGrande = false;
 
-function alternarFonte() {
-    fonteGrande = !fonteGrande;
-
-    if (fonteGrande) {
-        document.body.style.fontSize = "1.4rem";
+    if (document.body.classList.contains("dark")) {
+        icone.textContent = "light_mode";
     } else {
-        document.body.style.fontSize = "1rem";
+        icone.textContent = "dark_mode";
     }
-}
+});
+
+// Acessibilidade
+const botaoFonte = document.getElementById("toggle-font");
+
+botaoFonte.addEventListener("click", function() {
+    document.body.classList.toggle("large-font");
+});
