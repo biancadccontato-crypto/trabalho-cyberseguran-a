@@ -15,11 +15,29 @@
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- SIDEBAR -->
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="fecharSidebar()"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="sidebar-close" onclick="fecharSidebar()" title="Fechar menu">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <nav class="sidebar-nav">
+            <a href="index.html">🏠 Home</a>
+            <a href="content.html">🔒 Privacidade Digital</a>
+            <a href="content2.html">⚠️ Golpes Online</a>
+            <a href="segurança.html">🔑 Gerador de Senha</a>
+            <a href="sobre.html">👥 Sobre o Grupo</a>
+            <a href="contato.html">✉️ Contato</a>
+        </nav>
+    </aside>
+
     <header>
         <div class="header-container">
-            <div class="header-logo">
-                <div>
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+                <button class="btn-menu" id="btn-menu" onclick="abrirSidebar()" title="Menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="header-logo">
                     <h1>Guia de Segurança Digital</h1>
                     <span class="header-sub">Projeto Web Lab · UPF 2025</span>
                 </div>
@@ -37,7 +55,6 @@
 
     <main>
 
-        <!-- HERO -->
         <section class="hero-section">
             <div class="hero-content">
                 <span class="hero-tag">🎓 Desenvolvido por alunos da UPF</span>
@@ -46,7 +63,6 @@
             </div>
         </section>
 
-        <!-- APRESENTAÇÃO -->
         <section class="intro-section">
             <article class="cartilha-card">
                 <div class="cartilha-icon">🔒</div>
@@ -67,7 +83,6 @@
             </article>
         </section>
 
-        <!-- CARDS NAVEGAÇÃO -->
         <section class="sobre-temas">
             <div class="container">
                 <div class="section-header">
@@ -82,7 +97,7 @@
                     </div>
 
                     <div class="card">
-                        <h3><span class="card-emoji">⚠️</span> <a href="content.html">Golpes Online</a></h3>
+                        <h3><span class="card-emoji">⚠️</span> <a href="content2.html">Golpes Online</a></h3>
                         <p class="card-desc">Conheça os golpes mais comuns usados na internet.</p>
                     </div>
 
@@ -111,80 +126,16 @@
         <p>&copy; 2025 - Trabalho de Desenvolvimento para Web - UPF</p>
     </footer>
 
-    <script src="js/scripts.js"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Segurança da Informação - Home</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-    <header>
-        <div class="header-container">
-            <h1>Guia de Segurança Digital</h1>
-            
-            <div class="controls">
-                <button id="toggle-theme" title="Alternar Tema">
-                    <span class="material-symbols-outlined">dark_mode</span>
-                </button>
-                <button id="toggle-font" title="Alternar Tamanho da Fonte">
-                    <span class="material-symbols-outlined">accessibility</span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section class="intro">
-            <h2>Apresentação das Cartilhas de Segurança</h2>
-            <p>Seja bem-vindo ao nosso portal interativo. Este espaço foi construído com base nas cartilhas desenvolvidas pelos alunos da UPF na disciplina de Cybersegurança, buscando conscientizar a comunidade acadêmica e externa sobre os perigos do ambiente digital</p>
-        </section>
-
-        <article class="cartilha-section">
-            <h3>1. Cartilha de Privacidade Digital</h3>
-            <p>A privacidade na internet vai muito além de esconder suas senhas. Ela envolve o controle sobre quem tem acesso aos seus dados pessoais, seus hábitos de navegação e suas informações sensíveis.</p>
-            <p>Em nossa página dedicada, discutiremos como os dados são coletados por grandes plataformas, a importância de ler os termos de uso e técnicas para blindar a sua presença online contra o rastreamento excessivo.</p>
-        </article>
-
-        <article class="cartilha-section">
-            <h3>2. Cartilha de Golpes na Internet</h3>
-            <p>Os cibercriminosos estão cada vez mais sofisticados, utilizando técnicas de engenharia social para enganar usuários e extrair vantagens financeiras.</p>
-            <p>Nesta seção, apresentamos os golpes mais comuns da atualidade e mostramos de forma prática como identificar os sinais de uma fraude antes de se tornar uma vítima.</p>
-        </article>
-    </main>
-
-    <nav>
-        <h2>Explore o Site</h2>
-        <p>Clique em uma das opções para saber mais</p>
-        <ul>
-            <li><a href="content.html">Privacidade Digital</a></div></li>
-            <p>Entenda o que são os dados pessoais, como são usados e como os proteger</p>
-            <li><a href="content.html">Golpes Virtuais</a></li>
-            <p>Conheça os golpes mais comuns usados na internet</p>
-            <li><a href="segurança.html">Gerador de Senhas</a></li>
-            <p>Crie uma senha segura e forte instantaneamente </p>
-            <li><a href="sobre.html">Sobre o Grupo</a></li>
-            <p>Coneheças os responsáveis por este projeto</p>
-            <li><a href="contato.html">Contato</a></li>
-            <p>Entre em contato conosco</p>
-        </ul>
-    </nav>
-
-    <footer>
-        <p>&copy; 2026 - Trabalho de Desenvolvimento para Web - UPF</p>
-    </footer>
-
-    <script src="js/script.js"></script>
+    <script src="js/javascrip.js"></script>
+    <script>
+        function abrirSidebar() {
+            document.getElementById('sidebar').classList.add('aberta');
+            document.getElementById('sidebar-overlay').classList.add('ativo');
+        }
+        function fecharSidebar() {
+            document.getElementById('sidebar').classList.remove('aberta');
+            document.getElementById('sidebar-overlay').classList.remove('ativo');
+        }
+    </script>
 </body>
 </html>
