@@ -4,21 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre o Grupo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-    <header>
-        <h1>Segurança da Informação</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="content.html">Cartilha: Privacidade</a></li>
-                <li><a href="content2.html">Cartilha: Fraudes</a></li>
-                <li><a href="seguranca.html">Gerador de Senhas</a></li>
-                <li><a href="sobre.html">Sobre o Grupo</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="fecharSidebar()"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="sidebar-close" onclick="fecharSidebar()">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <nav class="sidebar-nav">
+            <a href="index.html">🏠 Home</a>
+            <a href="content.html">🔒 Privacidade Digital</a>
+            <a href="content2.html">⚠️ Golpes Online</a>
+            <a href="segurança.html">🔑 Gerador de Senha</a>
+            <a href="sobre.html">👥 Sobre o Grupo</a>
+            <a href="contato.html">✉️ Contato</a>
         </nav>
+    </aside>
+
+    <header>
+        <div class="header-container">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+                <button class="btn-menu" onclick="abrirSidebar()" title="Menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="header-logo">
+                    <h1>Guia de Segurança Digital</h1>
+                    <span class="header-sub">Projeto Web Lab · UPF 2025</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="toggle-font" title="Alternar Tamanho da Fonte">
+                    <span class="material-symbols-outlined">accessibility</span>
+                </button>
+                <button id="toggle-theme" title="Alternar Tema">
+                    <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
+                </button>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -26,24 +54,27 @@
             <h2>Desenvolvedores do Projeto</h2>
             <p>Conheça a equipe responsável pela criação deste portal de cibersegurança.</p>
 
-            <article>
-                <h3>Bianca</h3>
-                <img src="" alt="Foto Bianca">
-                <p>Espaço para descrição</p>
-            </article>
+            <div class="grupo-grid">
 
-             <article>
-                <h3>Laura</h3>
-                <img src="assets/Laura.jpeg" alt="Foto Laura">
-                <p>Estudante de Ciência da Computação na UPF. Neste Projeto da materia de Web Lab, fiquei responsável pela página Inicial (Home) e pelo design da página(CSS)</p>
-            </article>
+                <div class="membro-card">
+                    <img src="assets/bianca.jpeg" alt="Foto Bianca">
+                    <h3>Bianca</h3>
+                    <p>Espaço para descrição</p>
+                </div>
 
-            <article>
-                <h3>Nicolas Spanhol</h3>
-                <img src="assets/nicolas.jpeg" alt="Foto Nicolas">
-                <p>Estudante de Ciência da Computação na UPF. Neste projeto de Web Lab, atuei como responsável pela pesquisa de conteúdo das cartilhas do CERT.br e pela estruturação completa do código em HTML5, garantindo a aplicação correta da Web Semântica e a acessibilidade das informações.</p>
-            </article>
+                <div class="membro-card">
+                    <img src="assets/Laura.jpeg" alt="Foto Laura">
+                    <h3>Laura</h3>
+                    <p>Estudante de Ciência da Computação na UPF. Responsável pela página inicial (Home) e pelo design do site (CSS).</p>
+                </div>
 
+                <div class="membro-card">
+                    <img src="assets/nicolas.jpeg" alt="Foto Nicolas">
+                    <h3>Nicolas Spanhol</h3>
+                    <p>Estudante de Ciência da Computação na UPF. Responsável pela pesquisa de conteúdo das cartilhas e pela estruturação do HTML.</p>
+                </div>
+
+            </div>
         </section>
     </main>
 
@@ -52,5 +83,16 @@
         <p>Desenvolvido com base nas cartilhas do CERT.br</p>
     </footer>
 
+    <script src="js/javascrip.js"></script>
+    <script>
+        function abrirSidebar() {
+            document.getElementById('sidebar').classList.add('aberta');
+            document.getElementById('sidebar-overlay').classList.add('ativo');
+        }
+        function fecharSidebar() {
+            document.getElementById('sidebar').classList.remove('aberta');
+            document.getElementById('sidebar-overlay').classList.remove('ativo');
+        }
+    </script>
 </body>
 </html>
