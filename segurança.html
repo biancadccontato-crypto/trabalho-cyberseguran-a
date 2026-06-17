@@ -3,35 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Segurança</title>
+    <title>Gerador de Senhas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-<header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="content.html">Cartilha: Privacidade</a></li>
-                <li><a href="content2.html">Cartilha: Fraudes</a></li>
-                <li><a href="segurança.html">Gerador de Senhas</a></li>
-                <li><a href="sobre.html">Sobre o Grupo</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="fecharSidebar()"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="sidebar-close" onclick="fecharSidebar()">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <nav class="sidebar-nav">
+            <a href="index.html">🏠 Home</a>
+            <a href="content.html">🔒 Privacidade Digital</a>
+            <a href="content2.html">⚠️ Golpes Online</a>
+            <a href="segurança.html">🔑 Gerador de Senha</a>
+            <a href="sobre.html">👥 Sobre o Grupo</a>
+            <a href="contato.html">✉️ Contato</a>
         </nav>
-</header>
-<main>
-    <h1>Gerador de Senhas</h1>
-        <h3>Selecione o tamanho da senha:</h3>
-            <label for="tamanho"></label>
+    </aside>
+
+    <header>
+        <div class="header-container">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+                <button class="btn-menu" onclick="abrirSidebar()" title="Menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="header-logo">
+                    <h1>Guia de Segurança Digital</h1>
+                    <span class="header-sub">Projeto Web Lab · UPF 2025</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="toggle-font" title="Alternar Tamanho da Fonte">
+                    <span class="material-symbols-outlined">accessibility</span>
+                </button>
+                <button id="toggle-theme" title="Alternar Tema">
+                    <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="gerador-container">
+            <h2>Gerador de Senhas</h2>
+            <h3>Selecione o tamanho da senha:</h3>
             <input type="number" id="tamanho" value="16" min="8" max="32">
             <br><br>
-            <h3>Clique no botão para gerar uma senha forte e segura.</h3>
-            <button onclick="gerarSenha()">Gerar Senha</button>
-            <p id="senha-gerada">Sua senha aparecerá aqui...</p>
-</main>
-<footer>
+            <p>Clique no botão para gerar uma senha forte e segura.</p>
+            <button class="btn-gerar" onclick="gerarSenha()">Gerar Senha</button>
+            <br><br>
+            <div class="senha-display" id="senha-gerada">Sua senha aparecerá aqui...</div>
+        </div>
+    </main>
+
+    <footer>
         <p>Projeto Web Lab - Curso de Ciência da Computação (UPF).</p>
-</footer>
+    </footer>
+
+    <script src="js/javascrip.js"></script>
     <script src="js/segurança.js"></script>
+    <script>
+        function abrirSidebar() {
+            document.getElementById('sidebar').classList.add('aberta');
+            document.getElementById('sidebar-overlay').classList.add('ativo');
+        }
+        function fecharSidebar() {
+            document.getElementById('sidebar').classList.remove('aberta');
+            document.getElementById('sidebar-overlay').classList.remove('ativo');
+        }
+    </script>
 </body>
 </html>

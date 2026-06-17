@@ -4,40 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="content.html">Cartilha: Privacidade</a></li>
-                <li><a href="content2.html">Cartilha: Fraudes</a></li>
-                <li><a href="segurança.html">Gerador de Senhas</a></li>
-                <li><a href="sobre.html">Sobre o Grupo</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="fecharSidebar()"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="sidebar-close" onclick="fecharSidebar()">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <nav class="sidebar-nav">
+            <a href="index.html">🏠 Home</a>
+            <a href="content.html">🔒 Privacidade Digital</a>
+            <a href="content2.html">⚠️ Golpes Online</a>
+            <a href="segurança.html">🔑 Gerador de Senha</a>
+            <a href="sobre.html">👥 Sobre o Grupo</a>
+            <a href="contato.html">✉️ Contato</a>
         </nav>
-</header>
-<main>
-    <h1>Formulário de Contato</h1>
-    <form onsubmit="enviar(); return false;">
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" placeholder="Digite seu nome"><br><br>
+    </aside>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" placeholder="Digite seu e-mail"><br><br>
+    <header>
+        <div class="header-container">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+                <button class="btn-menu" onclick="abrirSidebar()" title="Menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="header-logo">
+                    <h1>Guia de Segurança Digital</h1>
+                    <span class="header-sub">Projeto Web Lab · UPF 2025</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="toggle-font" title="Alternar Tamanho da Fonte">
+                    <span class="material-symbols-outlined">accessibility</span>
+                </button>
+                <button id="toggle-theme" title="Alternar Tema">
+                    <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
+                </button>
+            </div>
+        </div>
+    </header>
 
-        <label for="mensagem">Mensagem:</label><br>
-        <textarea id="mensagem" rows="5" cols="40"></textarea><br><br>
+    <main>
+        <section>
+            <h2>Formulário de Contato</h2>
+            <form class="form-contato" onsubmit="enviar(); return false;">
+                <div class="form-grupo">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome">
+                </div>
+                <div class="form-grupo">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Digite seu e-mail">
+                </div>
+                <div class="form-grupo">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" rows="5"></textarea>
+                </div>
+                <button class="btn-enviar" type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
 
-        <button onclick="enviar()">Enviar</button>
-    </form>
-</main>
-<footer>
+    <footer>
         <p>Projeto Web Lab - Curso de Ciência da Computação (UPF).</p>
-</footer>
-    <script src="js/script.js"></script>
+    </footer>
+
+    <script src="js/javascrip.js"></script>
+    <script>
+        function abrirSidebar() {
+            document.getElementById('sidebar').classList.add('aberta');
+            document.getElementById('sidebar-overlay').classList.add('ativo');
+        }
+        function fecharSidebar() {
+            document.getElementById('sidebar').classList.remove('aberta');
+            document.getElementById('sidebar-overlay').classList.remove('ativo');
+        }
+    </script>
 </body>
 </html>

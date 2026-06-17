@@ -4,21 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartilha de Privacidade</title>
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-    <header>
-        <h1>Segurança da Informação</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="content.html">Cartilha: Privacidade</a></li>
-                <li><a href="content2.html">Cartilha: Fraudes</a></li>
-                <li><a href="segurança.html">Gerador de Senhas</a></li>
-                <li><a href="sobre.html">Sobre o Grupo</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="fecharSidebar()"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="sidebar-close" onclick="fecharSidebar()">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <nav class="sidebar-nav">
+            <a href="index.html">🏠 Home</a>
+            <a href="content.html">🔒 Privacidade Digital</a>
+            <a href="content2.html">⚠️ Golpes Online</a>
+            <a href="segurança.html">🔑 Gerador de Senha</a>
+            <a href="sobre.html">👥 Sobre o Grupo</a>
+            <a href="contato.html">✉️ Contato</a>
         </nav>
+    </aside>
+
+    <header>
+        <div class="header-container">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+                <button class="btn-menu" onclick="abrirSidebar()" title="Menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="header-logo">
+                    <h1>Guia de Segurança Digital</h1>
+                    <span class="header-sub">Projeto Web Lab · UPF 2025</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="toggle-font" title="Alternar Tamanho da Fonte">
+                    <span class="material-symbols-outlined">accessibility</span>
+                </button>
+                <button id="toggle-theme" title="Alternar Tema">
+                    <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
+                </button>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -46,8 +74,7 @@
                     <li>Evite compartilhar imagens ou se deixar filmar ou fotografar em situações íntimas.</li>
                     <li>Apague fotos e vídeos antes de levar dispositivos para a assistência técnica.</li>
                 </ul>
-
-                <img src="assets/privacidade-img1.png" alt="Imagem privacidade 1">
+                <img src="assets/privacidade-img1.png" alt="Ilustração sobre privacidade">
             </article>
 
             <article>
@@ -57,40 +84,29 @@
                     <li>Limite a coleta de dados configurando o navegador para não aceitar cookies de terceiros.</li>
                     <li>Use o modo de navegação anônima, quando possível.</li>
                 </ul>
+                <img src="assets/privacidade-img4.png" alt="Ilustração sobre rastreamento">
             </article>
 
             <article>
                 <h3>Configure a privacidade nas redes sociais</h3>
-                <p>As redes sociais são os locais onde as pessoas mais expõem seus dados pessoais de forma voluntária. É fundamental controlar quem tem acesso ao que você publica para evitar que informações sensíveis caiam em mãos erradas.</p>
+                <p>As redes sociais são os locais onde as pessoas mais expõem seus dados pessoais de forma voluntária. É fundamental controlar quem tem acesso ao que você publica.</p>
                 <ul>
                     <li>Configure o perfil como "privado" ou "apenas amigos" para limitar o alcance das publicações.</li>
                     <li>Seja seletivo ao aceitar novos contatos e evite adicionar pessoas desconhecidas.</li>
-                    <li>Desative a geolocalização nas postagens para não revelar os locais que você frequenta rotineiramente.</li>
+                    <li>Desative a geolocalização nas postagens.</li>
                 </ul>
-
-                <img src="assets/privacidade-img3.png" alt="Imagem privacidade 3">
+                <img src="assets/privacidade-img3.png" alt="Ilustração sobre redes sociais">
             </article>
 
             <article>
                 <h3>Atenção com as permissões de aplicativos</h3>
-                <p>Muitos aplicativos para celulares e tablets solicitam acesso a dados que não são necessários para o seu funcionamento real, como sua lista de contatos, câmera, microfone e localização.</p>
+                <p>Muitos aplicativos solicitam acesso a dados que não são necessários para o seu funcionamento real, como sua lista de contatos, câmera, microfone e localização.</p>
                 <ul>
                     <li>Leia atentamente as permissões exigidas antes de instalar qualquer aplicativo.</li>
-                    <li>Negue permissões que pareçam abusivas ou desnecessárias para a função do app.</li>
-                    <li>Remova os aplicativos que você não utiliza mais para diminuir os pontos de coleta de dados.</li>
+                    <li>Negue permissões que pareçam abusivas ou desnecessárias.</li>
+                    <li>Remova os aplicativos que você não utiliza mais.</li>
                 </ul>
-            </article>
-
-            <article>
-                <h3>Proteja seus dados nos dispositivos</h3>
-                <p>A privacidade também dependa da segurança física e digital, dos aparelhos que você usa no dia a dia. Se alguém tiver acesso ao seu dispositivo, terá acesso à sua vida privada.</p>
-                <ul>
-                    <li>Utilize senhas fortes, bloqueio de tela por biometria ou PIN em todos os seus dispositivos.</li>
-                    <li>Ative a criptografia de disco sempre que disponível para proteger os dados em caso de perda ou roubo.</li>
-                    <li>Mantenha o sistema operacional de todos os programas sempre atualizados com as últimas correções de segurança.</li>
-                </ul>
-
-                <img src="assets/privacidade-img2.png" alt="Imagem privacidade 2">
+                <img src="assets/privacidade-img2.png" alt="Ilustração sobre permissões de apps">
             </article>
         </section>
     </main>
@@ -100,5 +116,16 @@
         <p>Desenvolvido com base nas cartilhas do CERT.br</p>
     </footer>
 
+    <script src="js/javascrip.js"></script>
+    <script>
+        function abrirSidebar() {
+            document.getElementById('sidebar').classList.add('aberta');
+            document.getElementById('sidebar-overlay').classList.add('ativo');
+        }
+        function fecharSidebar() {
+            document.getElementById('sidebar').classList.remove('aberta');
+            document.getElementById('sidebar-overlay').classList.remove('ativo');
+        }
+    </script>
 </body>
 </html>

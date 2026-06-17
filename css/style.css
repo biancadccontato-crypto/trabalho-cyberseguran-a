@@ -222,8 +222,27 @@ ul li { margin-bottom: 0.4rem; }
 
 img {
     max-width: 100%;
-    border-radius: 8px;
-    margin-top: 1rem;
+    border-radius: 10px;
+    margin-top: 1.25rem;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Imagens ilustrativas das cartilhas */
+article img {
+    max-width: 380px;
+    margin: 1.25rem auto 0;
+}
+
+/* Fotos dos membros */
+.membro-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    border: 3px solid #3f51b5;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 /* ==========================================================================

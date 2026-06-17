@@ -3,22 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartilha Evite Fraudes</title>
+    <title>Cartilha: Evite Fraudes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-    <header>
-        <h1>Segurança da Informação</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="content.html">Cartilha: Privacidade</a></li>
-                <li><a href="content2.html">Cartilha: Fraudes</a></li>
-                <li><a href="seguranca.html">Gerador de Senhas</a></li>
-                <li><a href="sobre.html">Sobre o Grupo</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="fecharSidebar()"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="sidebar-close" onclick="fecharSidebar()">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <nav class="sidebar-nav">
+            <a href="index.html">🏠 Home</a>
+            <a href="content.html">🔒 Privacidade Digital</a>
+            <a href="content2.html">⚠️ Golpes Online</a>
+            <a href="segurança.html">🔑 Gerador de Senha</a>
+            <a href="sobre.html">👥 Sobre o Grupo</a>
+            <a href="contato.html">✉️ Contato</a>
         </nav>
+    </aside>
+
+    <header>
+        <div class="header-container">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+                <button class="btn-menu" onclick="abrirSidebar()" title="Menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="header-logo">
+                    <h1>Guia de Segurança Digital</h1>
+                    <span class="header-sub">Projeto Web Lab · UPF 2025</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="toggle-font" title="Alternar Tamanho da Fonte">
+                    <span class="material-symbols-outlined">accessibility</span>
+                </button>
+                <button id="toggle-theme" title="Alternar Tema">
+                    <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
+                </button>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -35,30 +63,29 @@
                 <p>Se um golpista invadir seu e-mail ou redes sociais, ele terá acesso a grande parte da sua vida digital e poderá redefinir outras senhas.</p>
                 <ul>
                     <li>Use senhas fortes e ative a verificação em duas etapas em todos os serviços.</li>
-                    <li>Nunca repasse senhas ou códigos de verificação (SMS ou e-mail) para terceiros.</li>
-                    <li>Redobre a atenção com contas importantes, como as usadas para recuperar senhas ou acessar serviços do governo.</li>
+                    <li>Nunca repasse senhas ou códigos de verificação para terceiros.</li>
+                    <li>Redobre a atenção com contas importantes, como as usadas para recuperar senhas.</li>
                 </ul>
             </article>
 
             <article>
                 <h3>Não acesse qualquer link</h3>
-                <p>Acessar links sem avaliar é arriscado. Você pode cair em páginas de phishing ou com malware, criadas para roubar dados, infectar seus dispositivos e cometer fraudes.</p>
+                <p>Acessar links sem avaliar é arriscado. Você pode cair em páginas de phishing ou com malware, criadas para roubar dados e infectar seus dispositivos.</p>
                 <ul>
-                    <li>Confira sempre o endereço do site (URL) antes de acessar. Na dúvida, digite o site oficial direto no navegador.</li>
-                    <li>Desconfie até de mensagens enviadas por conhecidos, pois a conta da pessoa pode estar invadida.</li>
+                    <li>Confira sempre o endereço do site (URL) antes de acessar.</li>
+                    <li>Desconfie até de mensagens enviadas por conhecidos, pois a conta pode estar invadida.</li>
                     <li>Adote os mesmos cuidados com links obtidos de QR Codes em locais públicos.</li>
                 </ul>
-
-                <img src="assets/fraudes-img1.png" alt="Imagem fraudes 1">
+                <img src="assets/fraudes-img1.png" alt="Ilustração sobre phishing">
             </article>
 
             <article>
                 <h3>Confirme primeiro, transfira depois</h3>
-                <p>A pessoa da foto no Whatsapp é conhecida, mas o número é novo? Desconfie! Golpistas usam fotos de redes sociais para enganar amigos e familiares pedindo dinheiro.</p>
+                <p>A pessoa da foto no WhatsApp é conhecida, mas o número é novo? Desconfie! Golpistas usam fotos de redes sociais para enganar amigos e familiares pedindo dinheiro.</p>
                 <ul>
-                    <li>Não acredite apenas na foto. Converse com a pessoa pelo contato antigo que você já tinha salvo.</li>
+                    <li>Não acredite apenas na foto. Converse com a pessoa pelo contato antigo.</li>
                     <li>Desconfie de qualquer pedido de dinheiro urgente.</li>
-                    <li>Antes de confirmar qualquer Pix ou transferência, leia com atenção os dados (nome e CNPJ/CPF) de quem vai receber.</li>
+                    <li>Antes de confirmar qualquer Pix, leia com atenção os dados de quem vai receber.</li>
                 </ul>
             </article>
 
@@ -66,12 +93,11 @@
                 <h3>Cuidado com fraudes no Pix e Boletos</h3>
                 <p>Os criminosos costumam alterar códigos de pagamento para desviar o dinheiro ou forçar devoluções falsas.</p>
                 <ul>
-                    <li>Se receber um Pix "por engano" e pedirem para devolver em outra conta, não faça. Use a opção oficial de "devolução" no próprio app do banco.</li>
-                    <li>Cuidado com boletos falsos: verifique se o valor está correto e se o beneficiário é realmente a empresa contratada.</li>
+                    <li>Se receber um Pix "por engano", use a opção oficial de "devolução" no próprio app do banco.</li>
+                    <li>Cuidado com boletos falsos: verifique se o valor e o beneficiário estão corretos.</li>
                     <li>Evite realizar pagamentos de taxas extras fora da plataforma original da compra.</li>
                 </ul>
-
-                <img src="assets/fraudes-img2.png" alt="Imagem fraudes 2">
+                <img src="assets/fraudes-img2.png" alt="Ilustração sobre golpe do Pix">
             </article>
         </section>
     </main>
@@ -80,6 +106,17 @@
         <p>Projeto Web Lab - Curso de Ciência da Computação (UPF).</p>
         <p>Desenvolvido com base nas cartilhas do CERT.br</p>
     </footer>
-    
+
+    <script src="js/javascrip.js"></script>
+    <script>
+        function abrirSidebar() {
+            document.getElementById('sidebar').classList.add('aberta');
+            document.getElementById('sidebar-overlay').classList.add('ativo');
+        }
+        function fecharSidebar() {
+            document.getElementById('sidebar').classList.remove('aberta');
+            document.getElementById('sidebar-overlay').classList.remove('ativo');
+        }
+    </script>
 </body>
 </html>
