@@ -478,3 +478,30 @@ footer {
     .cards-grid { grid-template-columns: 1fr; }
     .grupo-grid { grid-template-columns: 1fr; }
 }
+/* ================================
+   ACESSIBILIDADE — FONTE GRANDE
+================================ */
+body.large-font p,
+body.large-font a,
+body.large-font li,
+body.large-font h2,
+body.large-font h3,
+body.large-font span,
+body.large-font label,
+body.large-font input,
+body.large-font textarea,
+body.large-font .card-desc,
+body.large-font .hero-content p,
+body.large-font .hero-content h2,
+body.large-font .cartilha-text p,
+body.large-font .cartilha-text h3,
+body.large-font .sidebar-nav a,
+body.large-font .header-logo h1,
+body.large-font .header-sub,
+body.large-font .panel-item,
+body.large-font .membro-card p,
+body.large-font .membro-card h3,
+body.large-font .section-header p,
+body.large-font .section-header h2 {
+    font-size: 1.25em;
+}
