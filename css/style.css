@@ -82,8 +82,9 @@ body.dark .senha-display {
 /* ==========================================================================
    3. ACESSIBILIDADE
    ========================================================================== */
-body.large-font {
-    font-size: 1.25rem;
+html.large-font {
+    /* Aumenta a base do projeto em 20%. Como tudo usa REM, tudo vai crescer junto! */
+    font-size: 120%; 
 }
 
 /* ==========================================================================
@@ -95,14 +96,20 @@ body.large-font {
     box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html { 
+    /* A base do REM começa aqui */
+    font-size: 100%;
+    scroll-behavior: smooth; 
+    /* Esta transição cria um efeito de zoom super suave ao clicar no botão */
+    transition: font-size 0.3s ease-in-out;
+}
 
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    transition: background-color var(--transition), color var(--transition), font-size var(--transition);
+    transition: background-color var(--transition), color var(--transition);
 }
 
 a {
@@ -477,28 +484,4 @@ footer {
 @media (max-width: 480px) {
     .cards-grid { grid-template-columns: 1fr; }
     .grupo-grid { grid-template-columns: 1fr; }
-}
-/* ================================
-   ACESSIBILIDADE — FONTE GRANDE
-================================ */
-body.large-font {
-    font-size: 1.15rem;
-}
-
-body.large-font .hero-content h2 {
-    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-}
-
-body.large-font .hero-content p {
-    font-size: 1rem;
-}
-
-body.large-font .btn-hero,
-body.large-font .btn-gerar,
-body.large-font .btn-enviar,
-body.large-font .controls button,
-body.large-font .btn-menu,
-body.large-font .sidebar-close {
-    font-size: 1rem;
-    padding: 0.4rem;
 }

@@ -23,15 +23,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ── ACESSIBILIDADE ──
     const botaoFonte = document.getElementById("toggle-font");
+    // Agora selecionamos o <html> para que a escala em REM funcione globalmente
+    const rootHtml = document.documentElement; 
 
     if (localStorage.getItem("fonte") === "grande") {
-        document.body.classList.add("large-font");
+        rootHtml.classList.add("large-font");
     }
 
     botaoFonte.addEventListener("click", function () {
-        document.body.classList.toggle("large-font");
+        rootHtml.classList.toggle("large-font");
 
-        if (document.body.classList.contains("large-font")) {
+        if (rootHtml.classList.contains("large-font")) {
             localStorage.setItem("fonte", "grande");
         } else {
             localStorage.setItem("fonte", "normal");
