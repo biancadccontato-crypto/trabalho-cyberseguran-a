@@ -505,3 +505,19 @@ body.large-font .section-header p,
 body.large-font .section-header h2 {
     font-size: 1.25em;
 }
+body.large-font .btn-hero,
+body.large-font .btn-gerar,
+body.large-font .btn-enviar,
+body.large-font .controls button,
+body.large-font .btn-menu,
+body.large-font .sidebar-close {
+    font-size: 1.25em;
+    padding: 0.75em 1.2em;
+}
+body.large-font .hero-content h2 {
+    font-size: 1em; /* mantém o tamanho original */
+}
+
+body.large-font .hero-content p {
+    font-size: 1.25em;
+}
