@@ -514,8 +514,12 @@ body.large-font .sidebar-close {
     font-size: 1.25em;
     padding: 0.75em 1.2em;
 }
+body.large-font .hero-content {
+    max-width: 650px;
+}
+
 body.large-font .hero-content h2 {
-    font-size: 1em; /* mantém o tamanho original */
+    font-size: 1em;
 }
 
 body.large-font .hero-content p {
