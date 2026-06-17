@@ -23,3 +23,11 @@ const botaoFonte = document.getElementById("toggle-font");
 botaoFonte.addEventListener("click", function() {
     document.body.classList.toggle("large-font");
 });
+function abrirSidebar() {
+            document.getElementById('sidebar').classList.add('aberta');
+            document.getElementById('sidebar-overlay').classList.add('ativo');
+}
+function fecharSidebar() {
+    document.getElementById('sidebar').classList.remove('aberta');
+    document.getElementById('sidebar-overlay').classList.remove('ativo');
+}
