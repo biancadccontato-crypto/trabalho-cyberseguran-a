@@ -1,6 +1,7 @@
 // Botão formulário de contato
 function enviar() {
     alert("Página em construção");
+    return false;
 }
 // Tema
 const botaoTema = document.getElementById("toggle-theme");
