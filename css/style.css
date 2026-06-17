@@ -481,39 +481,16 @@ footer {
 /* ================================
    ACESSIBILIDADE — FONTE GRANDE
 ================================ */
-body.large-font p,
-body.large-font a,
-body.large-font li,
-body.large-font label,
-body.large-font input,
-body.large-font textarea,
-body.large-font .card-desc,
-body.large-font .cartilha-text p,
-body.large-font .sidebar-nav a,
-body.large-font .header-sub,
-body.large-font .membro-card p,
-body.large-font .section-header p {
-    font-size: 1.1em;
-}
-
-body.large-font h2,
-body.large-font h3,
-body.large-font .cartilha-text h3,
-body.large-font .membro-card h3,
-body.large-font .section-header h2 {
-    font-size: 1.5em;
-}
-
-body.large-font .hero-content {
-    max-width: 650px;
+body.large-font {
+    font-size: 1.15rem;
 }
 
 body.large-font .hero-content h2 {
-    font-size: 1.4em;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
 }
 
 body.large-font .hero-content p {
-    font-size: 1.1em;
+    font-size: 1rem;
 }
 
 body.large-font .btn-hero,
@@ -522,6 +499,6 @@ body.large-font .btn-enviar,
 body.large-font .controls button,
 body.large-font .btn-menu,
 body.large-font .sidebar-close {
-    font-size: 1em;
+    font-size: 1rem;
     padding: 0.4rem;
 }
